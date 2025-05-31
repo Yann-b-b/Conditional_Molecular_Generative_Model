@@ -1,26 +1,27 @@
-# Conditional_Protein_Generative_Model
+# Conditional_Molecule_Generative_Model
 
-This Project focuses on creating a diffusion model that is conditioned on protein attributes for generation.
-# Conditional_Protein_Generative_Model
+This project focuses on generating small molecules conditioned on target physicochemical properties using a contrastive alignment model with a SELF-BART architecture.
 
-This repository contains the code and resources for a final project exploring the use of conditional diffusion models for protein sequence generation. The goal is to generate protein sequences that are conditioned on specific biochemical properties such as solubility, stability, or binding affinity.
+## Conditional_Molecule_Generative_Model
+
+This repository contains the code and resources for a final project exploring the use of contrastive learning to align molecular structures and properties for conditional generation. The goal is to generate chemically valid molecular sequences (SELFIES) that match desired properties such as LogP, molecular weight, and polar surface area.
 
 ## Project Overview
 
-We aim to integrate a pretrained protein language model (e.g., ESM-2) with a conditional diffusion model. The pipeline embeds protein sequences into a latent space and uses a property vector to guide the diffusion-based sampling process. The generated latent vectors are then decoded back into protein representations such as amino acid sequences or SMILES strings.
+We integrate a pretrained molecular sequence model (SELF-BART) with a contrastive property encoder. The model maps both molecules and property vectors to a shared latent space, allowing controlled generation through property-conditioned decoding.
 
 ## Key Components
 
-- Protein dataset preparation and preprocessing
-- Embedding generation using pretrained models
-- Conditional latent diffusion model architecture and training
-- Decoding from latent space to protein representations
-- Evaluation of generated sequences (validity, novelty, property alignment)
+- Molecular dataset preparation and SELFIES conversion
+- Embedding generation using pretrained SELF-BART encoder
+- Contrastive training between molecule and property vectors
+- Conditional decoding using the SELF-BART decoder
+- Evaluation of generated molecules (validity, novelty, property alignment)
 
 ## Applications
 
-This work supports controlled protein design for use in drug discovery, biosensors, and synthetic biology.
+This work supports de novo molecular design for applications in drug discovery and materials science.
 
 ## References
 
-Key references include PepVAE (Dean et al., 2021), ProteinGAN (Repecka et al., 2021), AMP-Diffusion (Chen et al., 2024), and Guided Discrete Diffusion (Gruver et al., 2023).
+Key references include SELFIES (Krenn et al., 2020), DrugDiff (Oestreich et al., 2025), MolGPT (Bagal et al., 2021), and ImageBind (Girdhar et al., 2023).
